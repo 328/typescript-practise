@@ -1,0 +1,14 @@
+{
+  "name": "screenshot-js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "328",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "",
+    "tslint": "",
+    "jquery": "",
+    "html2canvas": "",
+    "@types/html2canvas": ""
+  }
+}

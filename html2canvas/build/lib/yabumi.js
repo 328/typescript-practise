@@ -35,8 +35,9 @@ function image_post(images) {
         type: "POST",
         url: "https://yabumi.cc/api/images.json",
     }).done(function (data, textStatus, xhr) {
+        append_url(data);
         console.info(data);
-        dfd.resolve(data);
+        dfd.resolve(data.url);
     }).fail(function (xhr, textStatus, error) {
         console.error("error");
         console.error(xhr);
@@ -44,6 +45,15 @@ function image_post(images) {
         console.error(error);
     });
     return dfd.promise();
+}
+function append_url(data) {
+    var node = document.createElement("LI");
+    var link = document.createElement("a");
+    link.title = data.url;
+    link.href = data.url;
+    link.text = data.url;
+    node.appendChild(link);
+    document.getElementById("myList").appendChild(node);
 }
 /*
 $(function () {
